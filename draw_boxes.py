@@ -1,23 +1,13 @@
 import matplotlib.patches as patches
 import numpy as np
+import compression
 
 
 def draw_boxes(frame, x_coords, y_coords):
     if not x_coords or not y_coords:
         return 0
-    for i in range(len(x_coords)):
-        if i % 2 == 0:
-            x_coords[i] -= 1
-        else:
-            x_coords[i] += 1
-    for i in range(len(y_coords)):
-        if i % 2 == 0:
-            y_coords[i] -= 1
-        else:
-            y_coords[i] += 1
-
-    x_coords = [x * 6 for x in x_coords]  # Scale values back up
-    y_coords = [x * 3 for x in y_coords]
+    else:
+        x_coords, y_coords = compression.decompress(x_coords, y_coords)
 
     rectangles = []
     label_coords = []

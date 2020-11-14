@@ -23,21 +23,19 @@ def compress_frame(x_hist, y_hist, x_factor=6, y_factor=3):
     return x_compressed, y_compressed
 
 
-def decompress(x_hist, y_hist, x_factor=6, y_factor=3):
-    x_decompressed = []
-    y_decompressed = []
-    for i in x_hist:
-        decompressed = [0]*x_factor
-        if i != 0:
-            mid = math.ceil(x_factor/2)
-            decompressed[mid] = 1
-        x_decompressed.extend(decompressed)
+def decompress(x_coords, y_coords,  x_factor=6, y_factor=3):
+    for i in range(len(x_coords)):
+        if i % 2 == 0:
+            x_coords[i] -= 1
+        else:
+            x_coords[i] += 1
+    for i in range(len(y_coords)):
+        if i % 2 == 0:
+            y_coords[i] -= 1
+        else:
+            y_coords[i] += 1
 
-    for j in y_hist:
-        decompressed = [0]*y_factor
-        if j != 0:
-            mid = math.ceil(y_factor/2)
-            decompressed[mid] = 1
-        y_decompressed.extend(decompressed)
+    x_coords = [x * 6 for x in x_coords]  # Scale values back up
+    y_coords = [x * 3 for x in y_coords]
 
-    return x_decompressed, y_decompressed
+    return x_coords, y_coords

@@ -3,7 +3,7 @@ import numpy as np
 import glob
 
 img_array = []
-g = sorted(glob.glob('final_images/*.jpg'))
+g = sorted(glob.glob('final_img/*.jpg'))
 print(g)
 for filename in g:
     img = cv2.imread(filename)
@@ -11,7 +11,7 @@ for filename in g:
     size = (width, height)
     img_array.append(img)
 
-out = cv2.VideoWriter('test2.avi', cv2.VideoWriter_fourcc(*'DIVX'), 10, size)
+out = cv2.VideoWriter('object_tracking.avi', cv2.VideoWriter_fourcc(*'DIVX'), 10, size)
 
 for i in range(len(img_array)):
     out.write(img_array[i])

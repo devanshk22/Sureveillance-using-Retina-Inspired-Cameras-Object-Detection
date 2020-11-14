@@ -14,23 +14,6 @@ start_time = 3003957837
 frames = pd.read_csv('timestamp_250pixel.csv')
 num_frames = frames.shape[0]
 count = 0
-# frame, td = form_frame.form_frame(filename, start_time, frame_time)
-# median_filtered_frame = median(frame, disk(1), mode='constant', cval=0.0)
-# fig, axs = plt.subplots(2, 2, figsize=(10, 10))
-# x_hist = bounding_box.form_x_hist(median_filtered_frame)
-# y_hist = bounding_box.form_y_hist(median_filtered_frame)
-# compressed_x_frame, compressed_y_frame = compression.compress_frame(x_hist, y_hist)
-# axs[1, 0].set_title('Frame')
-# axs[0, 0].set_title('X-Histogram')
-# axs[1, 1].set_title('Y-Histogram')
-# axs[1, 0].imshow(median_filtered_frame)
-# axs[0, 0].bar(x=range(len(x_hist)), height=x_hist)
-# axs[1, 1].invert_yaxis()
-# axs[1, 1].barh(y=range(len(y_hist)), width=y_hist, color='red')
-# axs[0, 1].set_title('Compressed X-histogram')
-# axs[0, 1].bar(x=range(len(compressed_x_frame)), height=compressed_x_frame)
-#
-# plt.show()
 
 for i in range(num_frames):
     curr_row = frames.iloc[i]

@@ -20,6 +20,7 @@ The project contains the following files:
 6) main.py: This is the main file that calls all the functions and saves each frame as an image so that form_video can stitch them together to form a video.
 
 A sample output is as follows: 
+
 ![220](https://user-images.githubusercontent.com/55581038/99142689-6f573900-2692-11eb-8f93-a4378a9dfc9a.jpg)
 
 

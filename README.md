@@ -2,6 +2,7 @@
 This code is for the Design and Innovation Project (group E008) at Nanyang Technological University, Singapore.
 
 **Based on the theory described in https://arxiv.org/abs/1910.01851**
+
 This project aims to use data captured from a Neuromorphic, or Retina Inspired, camera to perform object detection. I implemented an algorithm that uses the images captured by the neuromorphic camera to perform object tracking with low power consumption, low computational cost, and low memory usage. The efficiency of the neuromorphic camera is two-pronged. The first advantage is that an event-based camera image only captures pixels which change value. Additionally, these pixels have a single channel since they are grayscale. Due to this reason, these images take up relatively less memory space as compared to a regular color image which has 3 color channels and way more pixels. The second advantage is that a smaller image size requires less computational power to process. We used an algorithmic approach for object detection instead of more advance techniques like Convolutional Neural Networks to save computational cost. This makes our algorithm ideal for the problem we set out to solve, which is surveillance in remote areas where electric and computational power are hard to get.
 
 This project is split into three major parts:
